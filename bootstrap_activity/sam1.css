@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+
+}
+
+
+
+.wrapper {
+    display: inline-flex;
+}
+
+.wrapper .static-text{
+    color: fff;
+    font-size: 60px ;
+    font-weight: 400;   
+}
+
+.wrapper .dynamic-text{
+    margin-left: 15px ;
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+
+
+.dynamic-text li{
+    color: #383131;
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 6s steps(4) infinite;
+}
+@keyframes slide{
+    100%
+    {
+        top: -350px;
+    }
+}
+
+.dynamic-text li span{
+    position: relative; /* Fixed missing semicolon */
+}
+.dynamic-text li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #0d6efd;
+    border-left: 2px solid #000000;
+    animation: typing 1.5s steps(10) infinite; /* Fixed steps() */
+}
+
+@keyframes typing{
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+
